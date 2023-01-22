@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
+import { StandardListBoxComponent } from './components/standard-list-box/standard-list-box.component';
+import { createPerson } from './models/person.model';
 
 @Component({
   selector: 'compare-scrolling-root',
-  templateUrl: './app.component.html',
+  template: `<h1>Compare Scrolling</h1>
+    <div class="list-container">
+      <compare-scrolling-standard-list-box [people]="people" />
+    </div> `,
   styleUrls: ['./app.component.scss'],
+  imports: [StandardListBoxComponent],
+  standalone: true,
 })
 export class AppComponent {
   title = 'compare-scrolling';
+
+  protected people = Array.from({ length: 10000 }, createPerson);
 }
