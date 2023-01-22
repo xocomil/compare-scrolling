@@ -1,8 +1,10 @@
 .list-container {
   display: flex;
   max-height: 20em;
+  gap: 0.75rem;
 
   > * {
     max-width: 33%;
+    width: 100%;
   }
 }
